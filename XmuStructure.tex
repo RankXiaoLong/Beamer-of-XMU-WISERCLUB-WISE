@@ -1,0 +1,202 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%% @Description: XMU WISER Beamer module
+ %%%%%%%% @Version: 2.1
+ %%%%%%%% @Author: RankFan
+ %%%%%%%% @Date: 2021-07-17 13:37:36
+ %%%%%%%% @LastEditors: RankFan
+ %%%%%%%% @LastEditTime: 2021-07-17 19:03:20
+ %%%%%%%% @FilePath: 
+ %%%%%%%% @Email: 1917703489@qq.com
+ %%%%%%%% @Copyright (C) 2021 RankFan. All rights reserved.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% ---------------------------------------------------------------------------
+\usepackage{colortbl} % https://texdoc.org/serve/colortbl.pdf/0，https://www.latexstudio.net/archives/3326.html
+\usepackage{xcolor} % color,
+\usepackage{xmutheme} % xmutheme
+\usepackage{listingsutf8}
+%\usepackage[hitsz]{cnlogo}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{ulem}
+\usepackage{booktabs}
+\usepackage{hologo} % logo
+\usepackage{xspace}
+\usepackage{tikz} 
+\usepackage{caption}
+\usepackage{tabularx} % tabular
+\usepackage{amsmath} 
+\usepackage{calligra} % thanks pakeage
+\usepackage{textcomp} % https://www.latexstudio.net/hulatex/package/character.htm
+\usepackage{makecell} % https://www.latexstudio.net/archives/2432.html
+\usepackage{multirow} % tabluar multirow
+\usepackage{multicol} % tabluar multicol
+% ---------------------------------------------------------------------------
+
+\usetikzlibrary{calc, backgrounds, fit}
+\usetikzlibrary{shapes, arrows, chains}
+
+% \usepackage{indentfirst}
+\usepackage{ragged2e}
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0em}
+
+% % \usepackage[version=4]{mhchem}
+\usepackage{setspace} % https://zhuanlan.zhihu.com/p/138408387
+\usepackage{url}
+\usepackage{transparent}
+\usepackage[ruled,vlined]{algorithm2e}  % algorithm
+% \usepackage[T1]{fontenc}
+
+\setbeamertemplate{navigation symbols}{} %  navigation symbols set empty
+\usepackage{hyperref}
+\hypersetup{
+  % colorlinks,
+  % citecolor=blue,
+  % linkcolor=white,
+  % urlcolor=red,
+  bookmarksnumbered % bookmark
+}
+
+% ---------------------------------------------------------------------------
+% Font
+\setbeamertemplate{caption}[numbered]
+% https://oomake.com/question/615741
+\setbeamertemplate{itemize subitem}{ $\blacktriangleright$ }
+\setmonofont{Source Code Pro}
+
+% % 中文字体
+\setCJKmainfont{Source Han Serif SC} % 思源宋体 V1
+\setCJKsansfont{Source Han Sans SC} % 思源黑体 V2
+\setCJKmonofont{Source Han Sans SC}
+% ---------------------------------------------------------------------------
+
+% ---------------------------------------------------------------------------
+% define 7 colors 
+\definecolor{xmuwiser@orange}{rgb}{0.776,0.357,0.157}
+\definecolor{xmuwiser@blue}{rgb}{0.19,0.55,0.91}
+\definecolor{xmuwiser@purple}{rgb}{0.471, 0.000 0.471}
+\definecolor{xmuwiser@yellow}{rgb}{0.808, 0.616 0.133}
+\definecolor{xmuwiser@green}{rgb}{0.341, 0.553 0.090}
+\definecolor{xmuwiser@red}{rgb}{0.65, 0.11 0.19}
+\definecolor{xmuwiser@gray}{rgb}{0.95,0.95,0.95}
+
+% newcommend of alert uusing different colors
+\newcommand<>{\alertb}[1]{\setbeamercolor{alerted text}{fg=xmuwiser@red}%
+  \begin{alertenv}#2\relax#1\end{alertenv}%
+  \setbeamercolor{alerted text}{fg=xmuwiser@blue}%
+}
+\newcommand<>{\alertc}[1]{\setbeamercolor{alerted text}{fg=xmuwiser@green}%
+  \begin{alertenv}#2\relax#1\end{alertenv}%
+  \setbeamercolor{alerted text}{fg=xmuwiser@blue}%
+}
+\newcommand<>{\alertd}[1]{\setbeamercolor{alerted text}{fg=xmuwiser@yellow}%
+  \begin{alertenv}#2\relax#1\end{alertenv}%
+  \setbeamercolor{alerted text}{fg=xmuwiser@blue}%
+}
+\newcommand<>{\alerte}[1]{\setbeamercolor{alerted text}{fg=xmuwiser@purple}%
+  \begin{alertenv}#2\relax#1\end{alertenv}%
+  \setbeamercolor{alerted text}{fg=xmuwiser@blue}%
+}
+
+% ---------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This file contains the style of the codes show in slides.                     %%
+%% The package used is listings, but it possible to used others.                 %%
+% ref: https://www.latexstudio.net/index/details/index/mid/1166
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% color used in the code style
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codebackground}{rgb}{0.95,0.95,0.92}
+
+% style of the code!
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{codebackground},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    morestring=[s][\bfseries\color{red}]{\[}{\]},
+    morestring=[s][\bfseries\color{blue}]{\{}{\}},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\tiny,
+    frame=single,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    title=\lstname
+}
+\lstset{style = codestyle}
+% ---------------------------------------------------------------------------
+
+
+% ---------------------------------------------------------------------------
+% renewcommand or newcommand of logo using Tex
+\renewcommand{\TeX}{\hologo{TeX}}
+\renewcommand{\LaTeX}{\hologo{LaTeX}}
+\newcommand{\BibTeX}{\hologo{BibTeX}}
+\newcommand{\XeTeX}{\hologo{XeTeX}}
+\newcommand{\pdfTeX}{\hologo{pdfTeX}}
+\newcommand{\LuaTeX}{\hologo{LuaTeX}}
+\renewcommand{\CTeX}{C\TeX}
+\newcommand{\MiKTeX}{\hologo{MiKTeX}}
+\newcommand{\MacTeX}{Mac\hologo{TeX}}
+\newcommand{\beamer}{\textsc{beamer}}
+\newcommand{\XeLaTeX}{\hologo{Xe}\kern-.13em\LaTeX{}}
+\newcommand{\pdfLaTeX}{pdf\LaTeX{}}
+\newcommand{\LuaLaTeX}{Lua\LaTeX{}}
+
+\def\TeXLive{\TeX{} Live\xspace}
+\let\TL=\TeXLive
+% ---------------------------------------------------------------------------
+
+
+% ---------------------------------------------------------------------------
+\def\cmd#1{\texttt{\color{xmublue}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{xmublue}\footnotesize #1}}
+\def\cmdxmp#1#2#3{\small{\texttt{\color{xmublue}$\backslash$#1}\{#2\}\hspace{1em}\\ 
+                          $\Rightarrow$\hspace{1em} {#3}\par\vskip1em}}
+
+% \definecolor{WiseRed}{rgb}{153, 0, 0}   
+% \definecolor{WisePurple}{rgb}{102,0,102} %#72037F 114, 4, 127 RGB(102,0,102)
+
+% ---------------------------------------------------------------------------
+% set of tikz
+\usetikzlibrary{arrows.meta}
+\tikzset{%
+  >={Latex[width=0.75mm,length=1.75mm]},
+  % Specifications for style of nodes:
+    base/.style = {rectangle, rounded corners, draw=black,
+    minimum width=4em, minimum height=2em, text centered},
+    term/.style = {rectangle, draw=black, minimum width=6em,
+    minimum height=1.5em, text centered},
+    test/.style = {diamond, aspect = 3, text centered, draw=black,
+    minimum width=4em, minimum height=2em},
+    rectsplit/.style = {rectangle split, draw=black,
+    minimum height=1.5em,rectangle split horizontal,text centered,},
+    every picture/.style={line width=1pt},
+}
+% ---------------------------------------------------------------------------
+
+\newcommand{\wuhao}{\fontsize{10pt}{10pt}\selectfont}
+\newcommand{\pkg[1]}{\texttt{#1}}
+
+\graphicspath{{figures/}} % path of figure
+\renewcommand{\figurename}{figure}
+\renewcommand{\tablename}{tabel}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\arraystretch}{1.2}  % row distance in table
+
+\captionsetup{labelformat=default,labelsep=space} %去除冒号
+\setcounter{secnumdepth}{4}
+% ---------------------------------------------------------------------------
