@@ -11,11 +11,8 @@ ref:
 3. https://www.latexstudio.net/index/details/index/mid/75
 4. https://github.com/CamuseCao/XMU-thesis
 
-Download:
-
-git clone https://github.com/RankXiaoLong/Beamer-of-XMU-WISERCLUB.git
-
-Acknowledge:
-Thanks for the Gauss, God of Wei, Doctor Zhang, etc.
+Download: git clone https://github.com/RankXiaoLong/Beamer-of-XMU-WISERCLUB.git
 
 If you do not like the logo or the color of the beamer , you can modify the codes of `XMUtheme.sty`
+
+Acknowledge: Thanks for the Gauss, God of Wei, Doctor Zhang, etc.
