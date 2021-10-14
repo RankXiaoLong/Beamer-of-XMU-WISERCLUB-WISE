@@ -1,0 +1,31 @@
+\frametitle{Example:Mnist}
+  \begin{python}
+### Using the SkLearn interface ###
+from keras.datasets import mnist
+from catboost import CatBoostClassifier,Pool
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import accuracy_score
+import numpy as np
+(X,y),(X_test,y_test) = mnist.load_data()
+# (60000,28,28)
+print('x_shape:',X.shape)
+# 60000
+print('y_shape:',y.shape)
+X = X.reshape(X.shape[0],-1)/255
+X_test = X_test.reshape(X_test.shape[0],-1)/255
+
+param_test = {'iterations':np.arange(10,51,20),'learning_rate':[0.1,0.2],
+        'depth':np.arange(4,9,2)}
+
+cat = CatBoostClassifier(eval_metric="AUC",one_hot_max_size=31,l2_leaf_reg= 9,silent=False)
+grid_search = GridSearchCV(estimator=cat,param_grid=param_test,cv=2,verbose=2,n_jobs=-1)
+grid_search.fit(X,y)
+# grid_search.cv_results_  # Search for detailed results
+grid_search.best_params_
+grid_search.best_score_
+cat = grid_search.best_estimator_  # Best model
+y_pred = cat.predict(X_test)
+accuracy = accuracy_score(y_pred,y_test)
+print("The test set accuracy rate is:%.2f%%"%(accuracy*100.0))
+\end{python}
+The test set accuracy rate is: 96.9\%
