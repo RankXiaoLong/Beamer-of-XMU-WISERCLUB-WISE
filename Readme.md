@@ -1,4 +1,6 @@
-## Beamer of  XMU WISERCLUB
+## Beamer of  XMU WISERCLUB & WISE
+
+Author: RankFan & Gauss
 
 Run `Xelatex` **twice**
 
@@ -16,3 +18,5 @@ Download: git clone https://github.com/RankXiaoLong/Beamer-of-XMU-WISERCLUB.git
 If you do not like the logo or the color of the beamer , you can modify the codes of `XMUtheme.sty`
 
 Acknowledge: Thanks for the Gauss, God of Wei, Doctor Zhang, etc.
+
+## How to modify？
