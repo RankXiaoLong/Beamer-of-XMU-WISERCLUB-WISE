@@ -1,0 +1,167 @@
+ % ---------------------------------------------------------------------------
+ % ---------------------------------------------------------------------------
+ % https://mpetroff.net/files/beamer-theme-matrix/
+\useoutertheme{split}% Layout scheme for outer elements: split header and footer
+\usecolortheme{whale} % Color scheme for outer elements: use background colors
+\useinnertheme{rounded} % Layout scheme for inner elements: rounded elements
+% \useinnertheme{circles}
+\usecolortheme{orchid} % Color scheme for inner elements: use foreground colors
+% ---------------------------------------------------------------------------
+
+% ---------------------------------------------------------------------------
+\setbeamertemplate{itemize items}[circle] % Itemize items: default (triangle), circle, square, ball
+\setbeamertemplate{enumerate items}[circle] % Enumerate items: default, circle, square, ball
+
+% ---------------------------------------------------------------------------
+% Outline: default, sections numbered, subsections numbered, circle, square, ball, ball unnumbered
+\setbeamertemplate{sections/subsections in toc}[default]
+\setbeamertemplate{blocks}[rounded][shadow=true] % General blocks:
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true] % Title page:
+\setbeamertemplate{part page}[default][colsep=-4bp,rounded=true] % Part page:
+ % ---------------------------------------------------------------------------
+
+
+ % ---------------------------------------------------------------------------
+\usecolortheme[RGB={0.26411765,0.10294118,0.35980393}]{structure} % Colors
+
+% Define colour names
+% \definecolor{xmublue}{rgb}{1,1,1} %#(6,65,133) {0.09411765,0.15294118,0.30980393}  {0.023529412,0.254901961,0.521568627}
+\definecolor{xmublue}{rgb}{0.1222,0.5,0.9} %#(6,65,133) {0.023529412,0.254901961,0.521568627} 主题颜色
+\definecolor{xmulightgrey}{rgb}{1,0.188,0.188}   
+\definecolor{darkorange}{rgb}{0.8549,0.4392,0.8392 } %lightgray example颜色
+\definecolor{darkred}{rgb}{1,0.3882,0.2784 } %lightgray alert颜色
+\definecolor{darkblue}{rgb}{0.388,0.7215,1}
+\definecolor{xmusilver}{HTML}{c0c0c0}
+ % ---------------------------------------------------------------------------
+% \definecolor{darkblue}{rgb}{0.008, 0.165, 0.337}
+%\setbeamercolor{nktitle}{bg=white,fg=hitblue}
+%\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+% Set element colours
+\setbeamercolor{title}{bg=black!5!white, fg=xmublue}
+\setbeamercolor{subtitle}{bg=white, fg=xmusilver!40!darkblue}
+\setbeamercolor{titlepageheader}{bg=white, fg=black10!xmulightgrey} % bg=white,fg=black
+\setbeamercolor{titlepagefooter}{bg=white,fg=black}
+\setbeamercolor{block title}{fg=white,bg=xmublue}
+\setbeamercolor{block body}{fg=black,bg=xmublue!10!white}
+\setbeamercolor{structure}{bg=white, fg=xmublue!90!xmulightgrey}
+\setbeamercolor{alerted text}{fg=darkred}
+\setbeamercolor{example text}{fg=darkorange}
+% \setbeamercolor{block title example}{fg=darkorange}
+% \setbeamercolor{block body example}{fg=darkorange}
+ 
+
+\setbeamercolor{title in head/foot}{fg=white, bg=xmublue!90!xmulightgrey}
+\setbeamercolor{author in head/foot}{fg=white, bg=darkblue!90!xmulightgrey} %xmublue!30!xmublue
+\setbeamercolor{date in head/foot}{fg=white, bg=darkblue!90!xmulightgrey} % xmublue
+\setbeamercolor{framenumber in head/foot}{fg=white, bg=xmublue}
+
+\setbeamercolor{outline in head/foot}{fg=white, bg=darkblue!90!xmulightgrey} %bg=black!40!xmublue bg=xmulightgrey!40!xmulightgrey,xmusilver!40!xmulightgrey
+\setbeamercolor{subsection in head/foot}{fg=white, bg=xmublue!90!xmulightgrey} %xmusilver!60!xmulightgrey
+\setbeamercolor{xmulogo in head/foot}{fg=white, bg=xmublue!90!xmulightgrey}
+\setbeamerfont*{framesubtitle}{size=\large}
+
+% \setbeamercolor{frametitle}{parent=subsection in head/foot}
+% \setbeamercolor{frametitle right}{parent=subsection in head/foot}
+% \setbeamercolor{framesubtitle}{parent=subsection in head/foot}
+
+\pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
+  color(0pt)=(frametitle.bg);
+  color(\paperwidth)=(frametitle right.bg)}
+
+\AtBeginDocument{
+  \pgfdeclareverticalshading{beamer@topshade}{\paperwidth}{%
+    color(0pt)=(bg);
+    color(4pt)=(black!50!bg)}
+}
+
+% footline: author | title | date | framenumber
+
+\defbeamertemplate*{footline}{xmu theme}{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.485\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshorttitle
+   \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortdate
+  \end{beamercolorbox}%
+   \begin{beamercolorbox}[wd=0.065\paperwidth,ht=2.25ex,dp=1ex,right]{framenumber in head/foot}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  % \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+  % \end{beamercolorbox}
+  \vskip0pt%
+}
+
+% logo
+\defbeamertemplate*{headline}{xmu theme}{%
+  \leavevmode%
+  \@tempdimb=4ex
+    % \pgfdeclareimage[height=.95\@tempdimb]{logo}{hitszlogo.pdf}% XmuWiseLogo.pdf
+    \pgfdeclareimage[height=.5 \@tempdimb]{logo}{logo_pdf/WISE_1.pdf}% 
+    \pgfdeclareimage[height=.8 \@tempdimb]{title_logo} {logo_pdf/xmulogo.pdf}% 22 WISER xmulogo
+    % \pgfdeclareimage[height=0.65\@tempdimb]{title_logo}{latexstudiologo.png}%
+  \logo{
+    % \pgfsetfillopacity{0.1}
+    \pgfuseimage{logo}
+    % \pgfsetfillopacity{.8} 
+    }%
+  \ifdim\@tempdimb>0pt%
+    \advance\@tempdimb by 1.125ex%
+    %  \begin{beamercolorbox}[wd=.15\paperwidth,ht=\@tempdimb,center]{subsection in head/foot}%
+    %   \vbox to\@tempdimb{\vfil\pgfuseimage{math_logo}\vfil}%
+    % \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.12\paperwidth,ht=1\@tempdimb,dp=0.0001ex,center]{subsection in head/foot}% .065
+        \vbox to\@tempdimb{\vfil\insertlogo\vfil}%
+      \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.73\paperwidth,ht=1\@tempdimb,left]{outline in head/foot}%
+      \vbox to\@tempdimb{\vfil\insertsectionnavigationhorizontal{0\textwidth}{\hskip0pt 
+      plus1filll}{}\vfil}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.15\paperwidth,ht=1\@tempdimb,center]{xmulogo in head/foot}% 235
+      \vbox to\@tempdimb{\vfil\pgfuseimage{title_logo}\vfil}%
+    \end{beamercolorbox}%
+  \fi%
+}
+
+\defbeamertemplate*{frametitle}{xmu theme}{%
+  \nointerlineskip%
+  \hbox{\leavevmode
+    \advance\beamer@leftmargin by -12bp%
+    \advance\beamer@rightmargin by -12bp %
+    \beamer@tempdim=\textwidth%
+    \advance\beamer@tempdim by \beamer@leftmargin%
+    \advance\beamer@tempdim by \beamer@rightmargin%
+    \hskip-\Gm@lmargin\hbox{%
+      \setbox\beamer@tempbox=\hbox{\begin{minipage}[b]{\paperwidth}%
+          \vbox{}\vskip-.5ex
+          \leftskip0.3cm%
+          \rightskip= 0pt plus1fil \leavevmode 
+          \usebeamercolor{title}\insertframetitle%
+          \ifx\insertframesubtitle\@empty%
+            \strut\par%
+          \else
+            \par{\usebeamerfont*{framesubtitle}{\usebeamercolor{subtitle}\insertframesubtitle}\strut\par}%
+          \fi%
+          \nointerlineskip
+          \vbox{}%
+          \end{minipage}}%
+      \beamer@tempdim=\ht\beamer@tempbox%
+      \advance\beamer@tempdim by 2pt%
+      \begin{pgfpicture}{0mm}{0pt}{\paperwidth}{\beamer@tempdim}
+        \usebeamercolor{frametitle right}
+        \pgfpathrectangle{\pgfpointorigin}{\pgfpoint{\paperwidth}{\beamer@tempdim}}
+        \pgfusepath{clip}
+        \pgftext[left,base]{\pgfuseshading{beamer@frametitleshade}}
+      \end{pgfpicture}
+      \hskip-\paperwidth%
+      \box\beamer@tempbox%
+    }%
+    \hskip-\Gm@rmargin%
+  }%
+}
+\setbeamercolor{frametitle}{bg=white!5!white,fg=xmublue} % 5
+\setbeamerfont{frametitle}{size=\normalsize}
