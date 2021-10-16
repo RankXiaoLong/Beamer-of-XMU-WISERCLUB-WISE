@@ -1,6 +1,6 @@
 ## Beamer of  XMU WISERCLUB & WISE
 
-Author: RankFan & Gauss
+:point_right: Author: RankFan & Gauss
 
 Run `Xelatex` **twice**
 
@@ -20,3 +20,7 @@ If you do not like the logo or the color of the beamer , you can modify the code
 Acknowledge: Thanks for the Gauss, God of Wei, Doctor Zhang, etc.
 
 ## How to modify？
+
+
+## Questions :question:
+If you have questions, you can email me or issue the problems here
