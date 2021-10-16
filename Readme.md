@@ -1,8 +1,8 @@
-## Beamer of  XMU WISERCLUB & WISE
+## Beamer of  XMU WISERCLUB & WISE :octocat:
 
 :point_right: Author: RankFan & Gauss
 
-Run `Xelatex` **twice**
+:dart: Run `Xelatex` **twice**
 
 Fonts: https://mirrors.tuna.tsinghua.edu.cn/adobe-fonts/
 
