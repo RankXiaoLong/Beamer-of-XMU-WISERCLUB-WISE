@@ -1,6 +1,6 @@
 ## Beamer of  XMU WISERCLUB & WISE :octocat:
 
-:point_right: Author: [RankFan](https://www.cnblogs.com/RankFan/) & Gauss
+:point_right: ![Author:](https://img.shields.io/badge/Author-JoeyBling-red.svg "Author") [RankFan](https://www.cnblogs.com/RankFan/) & Gauss
 
 :dart: Run `Xelatex` **twice**
 
