@@ -20,7 +20,17 @@ If you do not like the logo or the color of the beamer , you can modify the code
 Acknowledge: Thanks for the Gauss, God of Wei, Doctor Zhang, etc.
 
 ## How to modify？
-
+- 修改head大小
+```latex
+\defbeamertemplate*{headline}{xmu theme}{%
+  \leavevmode%
+  % 6.4375ex
+  \@tempdimb=7ex # 修改具体高度
+  
+\begin{beamercolorbox}[wd=.76\paperwidth,ht=\@tempdimb,left]{outline in head/foot}%
+\vbox to\@tempdimb{\scriptsize\vfil\insertsectionnavigationhorizontal{0\textwidth}{\hskip0pt 
+plus1filll}{}\vfil} # \scriptsize 可以修改具体字的大小
+``` 
 
 ## Questions :question:
 If you have questions, you can email me or issue the problems here
