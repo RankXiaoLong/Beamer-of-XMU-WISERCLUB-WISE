@@ -20,7 +20,7 @@ If you do not like the logo or the color of the beamer , you can modify the code
 Acknowledge: Thanks for the Gauss, God of Wei, Doctor Zhang, etc.
 
 ## How to modify？
-- 修改head大小
+- 在`.sty`文件下，修改head大小
 ```latex
 \defbeamertemplate*{headline}{xmu theme}{%
   \leavevmode%
